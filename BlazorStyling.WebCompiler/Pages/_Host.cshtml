@@ -9,8 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BlazorStyling.WebCompiler</title>
     <base href="~/" />
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
-    <link href="css/site.css" rel="stylesheet" />
+    <environment include="Development">
+        <link href="css/site.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        <link href="css/site.min.css" rel="stylesheet" />
+    </environment>
 </head>
 <body>
     <app>

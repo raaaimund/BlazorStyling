@@ -1,0 +1,21 @@
+﻿<div class="progress">
+    <div class="progress-bar @BackgroundClass"
+         role="progressbar"
+         style="width: @Width"
+         aria-valuenow="@ValueNow"
+         aria-valuemin="0"
+         aria-valuemax="100">
+    </div>
+</div>
+
+@code {
+    public enum BackgroundColor { Red, Yellow, Green }
+
+    [Parameter]
+    public int ValueNow { get; set; }
+    [Parameter]
+    public BackgroundColor BgColor { get; set; } = BackgroundColor.Green;
+
+    private string BackgroundClass => $"bg-{BgColor.ToString().ToLower()}";
+    private string Width => $"{ValueNow}%";
+}
