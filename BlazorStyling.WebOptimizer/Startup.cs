@@ -21,8 +21,10 @@ namespace BlazorStyling.WebOptimizer
             services.AddServerSideBlazor();
             services.AddWebOptimizer(pipeline =>
             {
+                var appScssFilePath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
+                var provider = new Microsoft.Extensions.FileProviders.PhysicalFileProvider(appScssFilePath);
                 // UseContentRoot only sets the root of the source files
-                pipeline.AddScssBundle("/css/site.css", "App.scss").UseContentRoot();
+                pipeline.AddScssBundle("/css/site.css", "App.scss").UseFileProvider(provider);
             });
         }
 

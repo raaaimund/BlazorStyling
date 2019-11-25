@@ -1,1 +1,1 @@
-﻿///<binding BeforeBuild='App.scss' />
+﻿///<binding AfterBuild='App.scss' />

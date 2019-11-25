@@ -23,4 +23,8 @@
     <None Include="compilerconfig.json" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BlazorStyling.App\BlazorStyling.App.csproj" />
+  </ItemGroup>
+
 </Project>
