@@ -1,0 +1,8 @@
+﻿@page "/progressbar/{valuenow:int}"
+
+<Progress ValueNow="ValueNow" BgColor="Progress.BackgroundColor.Green" />
+
+@code {
+    [Parameter]
+    public int ValueNow { get; set; }
+}
